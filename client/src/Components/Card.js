@@ -16,10 +16,10 @@ const Container = styled.div`
 function Card(props) {
   const players = props.players;
   return (
-    <Container>
-      <h4>{players.name}</h4>
-      <h5>{players.country}</h5>
-      <h6>{players.searches}</h6>
+    <Container key={players.id}>
+      <h4> Nane: {players.name}</h4>
+      <h5> Country: {players.country}</h5>
+      <h6>Searches: {players.searches}</h6>
     </Container>
   );
 }

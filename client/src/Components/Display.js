@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import axios from "axios";
 
-// import useLocalStorage from "../Hooks/useLocalStorage";
+import useLocalStorage from "../Hooks/useLocalStorage";
 import Card from "./Card";
 
 const Container = styled.div`
@@ -30,8 +30,8 @@ const Container = styled.div`
 `;
 
 function Display() {
-  // const [data, setData] = useLocalStorage("players", []);
-  const [data, setData] = useState([]);
+  const [data, setData] = useLocalStorage("players", []);
+  // const [data, setData] = useState([]);
 
   useEffect(() => {
     axios
@@ -47,7 +47,7 @@ function Display() {
   if (data.length > 0) {
     return (
       <Container>
-        <h1>Women's World Cup players ranked by search interest</h1>
+        <h1>Women's World Cup players</h1>
         <div className="cardContainer">
           {data.map(player => (
             <Card players={player} />
